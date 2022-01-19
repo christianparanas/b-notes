@@ -1,0 +1,51 @@
+{% extends 'layout.html' %} {% block body %}
+
+<div class="new_container">
+  <h4>Edit note</h4>
+  <hr />
+
+  <form method="post" action='{{url_for("edit", id=datas.id)}}'>
+    <div class="form-group">
+      <label>Title</label>
+      <input
+        type="text"
+        name="title"
+        required
+        class="form-control"
+        value="{{ datas.title }}"
+      />
+    </div>
+    <div class="form-group">
+      <label>Content</label>
+      <textarea
+        type="text"
+        required
+        name="content"
+        class="form-control"
+        id=""
+        cols="30"
+        rows="5"
+      >
+{{ datas.content }}</textarea
+      >
+    </div>
+    <div class="form-group">
+      <label>Subject</label>
+      <input
+        type="text"
+        name="subject"
+        required
+        class="form-control"
+        value="{{ datas.subject }}"
+      />
+    </div>
+    <input type="submit" value="Update" class="btn addBtn" />
+    <a
+      class="btn deleteBtn"
+      href='{{ url_for("delete", id=datas.id)}}'
+      onclick='return confirm("Are You Sure")'
+      >Delete note</a
+    >
+  </form>
+</div>
+{% endblock %}

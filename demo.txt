@@ -1,0 +1,11 @@
+
+step 1: install packages
+- pip install flask sqlite3
+
+step 2: Initialize Databse
+- python db.py
+
+step 3: run the application
+- python app.py 
+
+step 4: Open browser at localhost:5000
