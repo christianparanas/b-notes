@@ -14,7 +14,12 @@ sql ='''CREATE TABLE "notes" (
 	"id"	INTEGER PRIMARY KEY AUTOINCREMENT,
 	"title"	TEXT,
 	"content"	TEXT,
-	"subject" TEXT
+	"subject" TEXT,
+	"imgLink" TEXT,
+	"extLink" TEXT,
+	"youtubeLink" TEXT,
+	"created_at" TEXT NOT NULL DEFAULT (DATETIME('now', 'localtime')),
+  "updated_at" TEXT NOT NULL DEFAULT (DATETIME('now', 'localtime'))
 )'''
 cur.execute(sql)
 
