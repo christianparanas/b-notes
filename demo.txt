@@ -1,6 +1,6 @@
 
 step 1: install packages
-- pip install flask sqlite3
+- pip install flask sqlite3 validators
 
 step 2: Initialize Databse
 - python db.py
