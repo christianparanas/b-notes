@@ -1,0 +1,238 @@
+<html>
+  <head>
+    <title>Note app</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+     <link href="https://cdn.jsdelivr.net/gh/hung1001/font-awesome-pro@bf7775b/css/all.css" rel='stylesheet' type='text/css' />
+</head>
+<body>
+  <app-root></app-root>
+</body>
+</html>
+
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <style>
+
+      .container {
+        background: #fff;
+        max-width: 500px;
+        margin: 50px auto;
+        box-shadow: 0 4px 4px 0 RGB(43 80 237 / 20%);
+        border: 2px solid #fafafa;
+        border-radius: 8px;
+        min-height: fit-content;
+      }
+
+      .notes_container {
+        display: grid;
+        gap: 10px;
+        padding: 20px 0;
+        overflow-y: auto;
+        max-height: 550px;
+        border-top: 5px solid #fafafa;
+      }
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0 20px;
+      }
+
+      .header h5 {
+        font-family: 'Fredoka One', cursive;
+      }
+
+      .header .newNoteBtn {
+        color: #fff;
+        background: teal;
+        text-decoration: none;
+        display: inline;
+        align-items: center;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 4px 4px 0 RGB(43 80 237 / 20%);
+        font-family: 'Fredoka One', cursive;
+        transition: all .3s ease-in-out;
+      }
+
+      .newNoteBtn:hover {
+        background: rgb(6, 92, 92);
+      }
+
+      .note {
+        box-shadow: 0 4px 4px 0 RGB(43 80 237 / 20%);
+        border: 4px solid #fafafa;
+        border-radius: 8px;
+        padding: 10px;
+        cursor: pointer;
+        transition: all .3s ease-in-out;
+        color: #000;
+        text-decoration: none;
+        position: relative;
+      }
+
+      .note .sub {
+        position: absolute;
+        right: 10px;
+        font-size: 12px;
+        bottom: 10px;
+        background: teal;
+        color: #fafafa;
+        font-family: 'Fredoka One', cursive;
+        padding: 3px 5px;
+        border-radius: 4px;
+        box-shadow: 0 4px 4px 0 RGB(43 80 237 / 20%);
+      }
+
+      .note:hover {
+        border-color: teal;
+        background: rgb(8, 192, 192);
+        color: #fff;
+        text-decoration: none;
+      }
+
+      .note .title {
+        font-family: 'Fredoka One', cursive;
+      }
+
+      .new_container {
+        padding-top: 20px;
+      }
+
+      .new_container h4 {
+        font-family: 'Fredoka One', cursive;
+      }
+
+      .new_container form .addBtn {
+        width: 100%;
+        background: teal;
+        color: #fff;
+        font-family: 'Fredoka One', cursive;
+      }
+
+      .new_container form .form-group span {
+        font-size: 10px;
+        color: grey;
+      }
+
+      .deleteBtn {
+        background: purple;
+        color: #fff;
+        width: 100%;
+        font-family: 'Fredoka One', cursive;
+        margin-top: 10px;
+      }
+
+      .deleteBtn:hover {
+        color: #fff;
+      }
+
+      .view_wrapper .header a {
+        cursor: pointer;
+        padding: 2px 4px;
+        border-radius: 4px;
+        box-shadow: 0 4px 4px 0 RGB(43 80 237 / 20%);
+        background: #fff;
+        border: 0;
+        margin-left: 5px;
+        color: grey;
+        border-radius: 5px;
+        transition: all .3s ease;
+        border: 4px solid #fafafa;
+      }
+
+      .view_wrapper .header .ssss {
+        border-color: teal;
+        background: rgb(8, 192, 192);
+        color: #fff;
+        font-family: 'Fredoka One', cursive;
+        padding: 3px 5px;
+        border-radius: 4px;
+        box-shadow: 0 4px 4px 0 RGB(43 80 237 / 20%);
+      }
+
+      .view_wrapper .header a:hover {
+        background: #fafafa;
+      }
+
+      iframe {
+        width: 100%;
+        height: 300px;
+      }
+
+      .view_wrapper .header a:nth-child(1) {
+        color: teal;
+      }
+
+      .view_wrapper .header a:nth-child(2) {
+        color: red;
+      }
+
+      .view_wrapper .content_container img {
+        width: 100%;
+        max-height: 300px;
+        object-fit: cover;
+      }
+
+      .view_wrapper .content_container .title {
+        margin-top: 10px;
+        font-size: 22px;
+        font-weight: 700;
+        font-family: 'Fredoka One', cursive;
+      }
+
+      .view_wrapper .content_container .utube .lbl {
+        font-size: 15px;
+        font-weight: 700;
+        margin: 30px 0 5px;
+      }
+
+      .view_wrapper .content_container .noteContent {
+        font-size: 15px;
+        font-weight: 100;
+        box-shadow: 0 4px 4px 0 RGB(43 80 237 / 20%);
+        padding: 10px;
+        height: fit-content;
+        margin-bottom: 10px;
+        border-radius: 8px;
+        border: 4px solid #fafafa;
+        overflow-y: scroll;
+        max-height: 300px;
+        white-space: pre-wrap;
+      }
+
+      .view_wrapper .content_container .link {
+        margin-top: 20px;
+
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      {% with messages=get_flashed_messages(with_categories=true) %} {% if
+      messages %} {% for category,message in messages %}
+      <div class="alert alert-{{category}}">{{message}}</div>
+      {% endfor %} {% endif %} {% endwith %} {% block body %} {% endblock %}
+    </div>
+  </body>
+</html>

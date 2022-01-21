@@ -1,0 +1,44 @@
+{% extends 'layout.html' %} {% block body %}
+
+<div class="new_container">
+  <h4>Add new note</h4>
+  <hr />
+
+  <form method="post" action='{{url_for("new")}}'>
+    <div class="form-group">
+      <label>Title</label>
+      <input placeholder="Your note's title" type="text" name="title" required class="form-control" />
+    </div>
+    <div class="form-group">
+      <label>Subject</label>
+      <input placeholder="Ex. IT213" type="text" name="subject" required class="form-control" />
+    </div>
+    <div class="form-group">
+      <label>Content</label>
+      <textarea
+        name="content"
+        required
+        class="form-control"
+        id=""
+        cols="30"
+        rows="3"
+        placeholder="Note main content"
+      ></textarea>
+    </div>
+
+    <div class="form-group">
+      <label>Image Link <span>(If you want to add image to your note)</span></label>
+      <input type="text" name="imageLink" placeholder="https://repo.com/me.png" class="form-control" />
+    </div>
+    <div class="form-group">
+      <label>Youtube video link <span>(If you want embed youtube video to your note)</span></label>
+      <input type="text" name="youtubeLink" placeholder="https://www.youtube.com/watch?v=bLjsSYyEZCs" class="form-control" />
+    </div>
+    <div class="form-group">
+      <label>External Link <span>(Ex. https://googledrive.com)</span></label>
+      <input type="text" name="extLink" placeholder="https://googledrive.com" class="form-control" />
+    </div>
+    <input type="submit" value="Add" class="btn addBtn" />
+  </form>
+</div>
+{% endblock %}
