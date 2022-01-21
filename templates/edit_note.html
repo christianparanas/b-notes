@@ -15,21 +15,7 @@
         value="{{ datas.title }}"
       />
     </div>
-    <div class="form-group">
-      <label>Content</label>
-      <textarea
-        type="text"
-        required
-        name="content"
-        class="form-control"
-        id=""
-        cols="30"
-        rows="5"
-      >
-{{ datas.content }}</textarea
-      >
-    </div>
-    <div class="form-group">
+        <div class="form-group">
       <label>Subject</label>
       <input
         type="text"
@@ -39,13 +25,34 @@
         value="{{ datas.subject }}"
       />
     </div>
+    <div class="form-group">
+      <label>Content</label>
+      <textarea
+        type="text"
+        required
+        name="content"
+        class="form-control"
+        id=""
+        cols="30"
+        rows="3"
+      >
+{{ datas.content }}</textarea
+      >
+    </div>
+
+    <div class="form-group">
+      <label>Image Link <span>(If you want to add image to your note)</span></label>
+      <input type="text" name="imageLink" value="{{ datas.imgLink }}" placeholder="https://repo.com/me.png" class="form-control" />
+    </div>
+    <div class="form-group">
+      <label>Youtube video link <span>(If you want embed youtube video to your note)</span></label>
+      <input type="text" name="youtubeLink" value="{{ datas.youtubeLink }}" placeholder="https://www.youtube.com/watch?v=bLjsSYyEZCs" class="form-control" />
+    </div>
+    <div class="form-group">
+      <label>External Link <span>(Ex. https://googledrive.com)</span></label>
+      <input type="text" value="{{ datas.extLink }}" name="extLink" placeholder="https://googledrive.com" class="form-control" />
+    </div>
     <input type="submit" value="Update" class="btn addBtn" />
-    <a
-      class="btn deleteBtn"
-      href='{{ url_for("delete", id=datas.id)}}'
-      onclick='return confirm("Are You Sure")'
-      >Delete note</a
-    >
   </form>
 </div>
 {% endblock %}
