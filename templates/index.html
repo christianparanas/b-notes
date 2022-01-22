@@ -7,14 +7,12 @@
 
 <div class="notes_container">
   {% if datas == [] %}
-  <div class="empty">
-    No note added, please add one.
-  </div>
+  <div class="empty">No note added, please add one.</div>
 
   {% else %} {% for row in datas %}
   <a href='{{ url_for("view", id=row.id)}}' class="note">
     <div class="title">{{ row.title }}</div>
-    <div class="pre">{{ row.content[0:15] }}</div>
+    <div class="pre">{{ row.content[0:30] + "..." }}</div>
     <div class="sub">{{ row.subject }}</div>
   </a>
 

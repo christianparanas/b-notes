@@ -4,41 +4,40 @@
   <div class="header">
     <div class="ssss">{{ datas.subject }}</div>
     <div class="">
-      <a href='{{ url_for("edit", id=datas.id)}}' class="edit" ><i class="fal fa-edit"></i></a>
-      <a class="delete" href='{{ url_for("delete", id=datas.id)}}' onclick='return confirm("Are You Sure")'><i class="fal fa-trash"></i>
+      <a href='{{ url_for("edit", id=datas.id)}}' class="edit"
+        ><i class="fal fa-edit"></i
+      ></a>
+      <a
+        class="delete"
+        href='{{ url_for("delete", id=datas.id)}}'
+        onclick='return confirm("Are You Sure")'
+        ><i class="fal fa-trash"></i>
       </a>
     </div>
   </div>
 
-<!--   <div class="date">{{ datas.created_at }}</div> -->
+  <!--   <div class="date">{{ datas.created_at }}</div> -->
   <div class="content_container">
     {% if datas.imgLink != "" %}
-      <img src="{{ datas.imgLink }}" alt="broken image link">
+    <img src="{{ datas.imgLink }}" alt="broken image link" />
     {% endif %}
 
     <div class="title">{{ datas.title}}</div>
     <div class="noteContent">{{ datas.content }}</div>
 
-    
-
     {% if datas.youtubeLink != "" %}
-      <div class="utube">
-        <div class="lbl">Embedded Youtube Video</div>
-        <iframe src="{{ datas.youtubeLink }}" frameborder="0"></iframe>
-      </div>
+    <div class="utube">
+      <div class="lbl">Embedded Youtube Video</div>
+      <iframe src="{{ datas.youtubeLink }}" frameborder="0"></iframe>
+    </div>
+    {% endif %} {% if datas.extLink != "" %}
+    <div class="link">
+      <h6>External link:</h6>
+      <ul>
+        <li><a href="{{ datas.extLink }}">{{ datas.extLink }}</a></li>
+      </ul>
+    </div>
     {% endif %}
-
-    {% if datas.extLink != "" %}
-      <div class="link">
-        <h6>External link:</h6>
-        <ul>
-          <li><a href="{{ datas.extLink }}">{{ datas.extLink }}</a></li>
-        </ul>
-      </div>
-    {% endif %}
-
   </div>
-
-  
 </div>
 {% endblock %}
